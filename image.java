@@ -86,3 +86,4 @@ public class image {
 		System.out.println("END of programme");
 	}
 }
+//image.java
