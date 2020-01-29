@@ -11,7 +11,8 @@ public class image {
 		Scanner sc=new Scanner(System.in);
 		System.out.println("Enter a message");
 		String str=sc.nextLine();
-		System.out.println("Message length="+str.length());
+		int len=str.length();
+		System.out.println("Message length="+len);
 		int count=0;
 		char ch=' ';
 		int p=0,a=0,r=0,g=0,b=0,k=0;
@@ -37,8 +38,15 @@ public class image {
 					// get blue 
 					b = p & 0xff;
 					if (count<str.length()) { // if a character exists to encode
-						ch=str.charAt(count);// extracting a character
-						count++;
+						if (i==0 && j==0)
+						{
+							ch=(char)len;
+						}
+						else
+						{
+							ch=str.charAt(count);// extracting a character
+							count++;
+						}
 						System.out.println(Integer.toBinaryString(ch));
 						//encoding last 2 bits of character in last two bits of a
 						k=ch & (0x3);
@@ -69,7 +77,7 @@ public class image {
 					img.setRGB(i, j, p); 
 				}
 			} 
-			File outputfile = new File("b.png");
+			File outputfile = new File(b.png");
 			ImageIO.write(img, "png", outputfile);
 		}
 		catch (Exception e)
