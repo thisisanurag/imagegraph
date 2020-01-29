@@ -19,9 +19,9 @@ public class image {
 		{
 			BufferedImage img=null;
 			img=ImageIO.read(new File("a.png"));
-		    //get image width and height 
-	        int width = img.getWidth(); 
-	        int height = img.getHeight();
+			//get image width and height 
+			int width = img.getWidth(); 
+			int height = img.getHeight();
 			for (int i = 0; i < width; i++) {
 				for (int j = 0; j < height; j++) {
 
@@ -49,20 +49,20 @@ public class image {
 						k= ch & (0xc);
 						r=r&(0xfc);
 						k=k>>2;
-						r=r|k;
-						System.out.println(Integer.toBinaryString(r));
-						 
-						k= ch &(0x30);
-						g=g&(0xfc);
-						k=k>>4;
-						g=g|k;
-						System.out.println(Integer.toBinaryString(g));
-						
-						k=ch &(0xc0);
-						b=b&(0xfc);
-						k=k>>6;
-						b=b|k;
-						System.out.println(Integer.toBinaryString(b));
+					r=r|k;
+					System.out.println(Integer.toBinaryString(r));
+
+					k= ch &(0x30);
+					g=g&(0xfc);
+					k=k>>4;
+					g=g|k;
+					System.out.println(Integer.toBinaryString(g));
+
+					k=ch &(0xc0);
+					b=b&(0xfc);
+					k=k>>6;
+					b=b|k;
+					System.out.println(Integer.toBinaryString(b));
 					}
 					// if no char is there to encode then simply reform the previous p
 					p = (a<<24) | (r<<16) | (g<<8) | b;
