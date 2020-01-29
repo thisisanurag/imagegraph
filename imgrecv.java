@@ -11,8 +11,8 @@ public class imgrecv {
 		char ch=' ';
 		int p=0,a=0,r=0,g=0,b=0,k=0;
 		Scanner sc=new Scanner (System.in);
-		System.out.println("Enter the length of the message");
-		int l=sc.nextInt();
+		//System.out.println("Enter the length of the message");
+		int l=10000;
 		int count=0;
 		BufferedImage img=null;
 		try
@@ -54,11 +54,17 @@ public class imgrecv {
 					len=t.length();
 					str=t.charAt(len-2)+""+t.charAt(len-1)+str;
 					//System.out.println(t);
-
 					k=Integer.parseInt(str,2);
-					System.out.print((char)k);
-
-					count++;
+					if (i==0 && j==0)
+					{
+						//System.out.println(k);
+						l=k;
+					}
+					else
+					{
+						System.out.print((char)k);
+						count++;
+					}
 				}
 			}
 		}
