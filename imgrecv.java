@@ -17,7 +17,7 @@ public class imgrecv {
 		BufferedImage img=null;
 		try
 		{
-			img=ImageIO.read(new File("b.png"));
+			img=ImageIO.read(new File("C:\\Users\\Anurag\\Desktop\\image\\b.png"));
 			//get image width and height 
 			int width = img.getWidth(); 
 			int height = img.getHeight();
@@ -32,27 +32,40 @@ public class imgrecv {
 					a = (p>>24) & 0xff;
 					t=Integer.toBinaryString(a);
 					len=t.length();
-					str=t.charAt(len-2)+""+t.charAt(len-1)+str;
+					if (len==1)
+						str=0+""+t.charAt(len-1)+str;
+					else
+						str=t.charAt(len-2)+""+t.charAt(len-1)+str;
+					//System.out.println(t);
 					//a=a&1;
 
 					// get red 
 					r = (p>>16) & 0xff;
 					t=Integer.toBinaryString(r);
 					len=t.length();
-					str=t.charAt(len-2)+""+t.charAt(len-1)+str;
+					if (len==1)
+						str=0+""+t.charAt(len-1)+str;
+					else
+						str=t.charAt(len-2)+""+t.charAt(len-1)+str;
 					//System.out.println(t);
 					// get green 
 					g = (p>>8) & 0xff; 
 					t=Integer.toBinaryString(g);
 					len=t.length();
-					str=t.charAt(len-2)+""+t.charAt(len-1)+str;
+					if (len==1)
+						str=0+""+t.charAt(len-1)+str;
+					else
+						str=t.charAt(len-2)+""+t.charAt(len-1)+str;
 					//System.out.println(t);
 
 					// get blue 
 					b = p & 0xff;
 					t=Integer.toBinaryString(b);
 					len=t.length();
-					str=t.charAt(len-2)+""+t.charAt(len-1)+str;
+					if (len==1)
+						str=0+""+t.charAt(len-1)+str;
+					else
+						str=t.charAt(len-2)+""+t.charAt(len-1)+str;
 					//System.out.println(t);
 					k=Integer.parseInt(str,2);
 					if (i==0 && j==0)
